@@ -46,8 +46,16 @@ jobs:
         run: ./emsdk install 1.39.4-fastcomp # https://github.com/constantdupuis/of_docker
         working-directory: ./emsdk
 
-      - name: emscripten install
-        run: ./emsdk install binaryen-tag-1.38.9-64bit # https://github.com/constantdupuis/of_docker
+      - name: emscripten install binaryen
+        run: ./emsdk install binaryen-tag-1.38.9-64bit
+        working-directory: ./emsdk
+
+      - name: emscripten activate binaryen
+        run: ./emsdk activate binaryen-tag-1.38.9-64bit
+        working-directory: ./emsdk
+
+      - name: emscripten set PATH
+        run: source "/home/runner/work/emscripten_openframeworks/emscripten_openframeworks/emsdk/emsdk_env.sh" && emcc --clear-cache
         working-directory: ./emsdk
 
       - name: emscripten activate a version
