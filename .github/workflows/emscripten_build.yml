@@ -48,7 +48,7 @@ jobs:
         working-directory: ./emsdk
 
       - name: emscripten set PATH
-        run: source "./emsdk_env.sh" && emcc --clear-cache
+        run: source "/home/runner/work/emscripten_openframeworks/emscripten_openframeworks/emsdk/emsdk_env.sh" && emcc --clear-cache
         working-directory: ./emsdk
 
       - name: cd
@@ -57,7 +57,7 @@ jobs:
       - name: openFrameworks download
         run: wget https://github.com/openframeworks/openFrameworks/archive/0.11.0.zip
 
-      - name: openFrameworks download
+      - name: openFrameworks unzip
         run: unzip -q 0.11.0.zip
 
       - name: ls
