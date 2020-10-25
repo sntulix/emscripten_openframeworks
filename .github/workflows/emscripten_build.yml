@@ -51,35 +51,5 @@ jobs:
         run: source "/home/runner/work/emscripten_openframeworks/emscripten_openframeworks/emsdk/emsdk_env.sh" && emcc --clear-cache
         working-directory: ./emsdk
 
-      - name: cd
-        run: cd ~
-
-      - name: openFrameworks download
-        run: wget https://github.com/openframeworks/openFrameworks/archive/0.11.0.zip
-
-      - name: openFrameworks unzip
-        run: unzip -qq 0.11.0.zip
-
-      - name: ls
-        run: ls
-        working-directory: ./openFrameworks-0.11.0
-
-      - name: openFrameworks download libs
-        run: scripts/emscripten/./download_libs.sh
-        working-directory: ./openFrameworks-0.11.0
-
-      - name: openFrameworks copy a Makefile
-        run: cp ../../../scripts/templates/emscripten/Makefile .
-        working-directory: ./openFrameworks-0.11.0/examples/3d/3DPrimitivesExample
-
-      - name: openFrameworks build sample
-        run: /home/runner/work/emscripten_openframeworks/emscripten_openframeworks/emsdk/emscripten/1.38.9/emmake make
-        working-directory: ./openFrameworks-0.11.0/examples/3d/3DPrimitivesExample
-
-      - name: ls
-        run: ls
-        working-directory: ./openFrameworks-0.11.0/examples/3d/3DPrimitivesExample
-
-      - name: ls
-        run: ls
-        working-directory: ./openFrameworks-0.11.0/examples/3d/3DPrimitivesExample/bin
+      - name: emscripten show PATH
+        run: which emmake
