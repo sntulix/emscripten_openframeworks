@@ -37,18 +37,16 @@ jobs:
 
       - name: ls
         run: ls
-
-      - name: cd
-        run: cd ./emsdk
-
-      - name: ls
-        run: ls
+        working-directory: ./emsdk
 
       - name: emscripten install
         run: ./emsdk install 1.39.4-fastcomp # https://github.com/constantdupuis/of_docker
+        working-directory: ./emsdk
 
       - name: emscripten activate a version
         run: ./emsdk activate 1.39.4-fastcomp # https://github.com/constantdupuis/of_docker
+        working-directory: ./emsdk
 
       - name: emscripten set PATH
-        run: source "/home/takahiro/source/emsdk/emsdk_env.sh" && emcc --clear-cache
+        run: source "./emsdk_env.sh" && emcc --clear-cache
+        working-directory: ./emsdk
