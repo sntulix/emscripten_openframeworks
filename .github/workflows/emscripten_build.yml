@@ -55,7 +55,7 @@ jobs:
         working-directory: ./emsdk
 
       - name: emscripten first run
-        run: emcc
+        run: ./emcc
         working-directory: ./emsdk/fastcomp/emscripten
 
       - name: cd
