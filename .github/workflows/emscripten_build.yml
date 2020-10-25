@@ -17,8 +17,8 @@ jobs:
       - name: show uname
         run: uname -a
 
-      - name: symbolic link python2
-        run: sudo ln -s /usr/bin/python2 /usr/bin/python
+#      - name: symbolic link python2
+#        run: sudo ln -s /usr/bin/python2 /usr/bin/python
 
       - name: update apt
         run: sudo apt update
