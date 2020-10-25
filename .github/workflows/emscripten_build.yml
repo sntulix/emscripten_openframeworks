@@ -46,6 +46,10 @@ jobs:
         run: ./emsdk install 1.39.4-fastcomp # https://github.com/constantdupuis/of_docker
         working-directory: ./emsdk
 
+      - name: emscripten install
+        run: ./emsdk install binaryen-tag-1.38.9-64bit # https://github.com/constantdupuis/of_docker
+        working-directory: ./emsdk
+
       - name: emscripten activate a version
         run: ./emsdk activate 1.39.4-fastcomp # https://github.com/constantdupuis/of_docker
         working-directory: ./emsdk
