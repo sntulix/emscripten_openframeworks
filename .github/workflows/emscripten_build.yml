@@ -32,6 +32,9 @@ jobs:
       - name: git clone 
         run: git clone https://github.com/emscripten-core/emsdk.git
 
+      - name: ls
+        run: ls
+
       - name: cd
         run: cd emsdk
 
