@@ -58,8 +58,8 @@ jobs:
         run: ./emsdk install binaryen-tag-1.38.9-64bit
         working-directory: ./emsdk
 
-      - name: emscripten set PATH binaryen
-        run: export /home/runner/work/emscripten_openframeworks/emscripten_openframeworks/emsdk/binaryen/tag-1.38.9_64bit_binaryen
+      - name: emscripten set BINARYEN_ROOT binaryen dir
+        run: export BINARYEN_ROOT=/home/runner/work/emscripten_openframeworks/emscripten_openframeworks/emsdk/binaryen/tag-1.38.9_64bit_binaryen
         working-directory: ./emsdk
 
       - name: show env
