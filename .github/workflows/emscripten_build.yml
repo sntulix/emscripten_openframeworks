@@ -38,6 +38,9 @@ jobs:
       - name: cd
         run: cd emsdk
 
+      - name: ls
+        run: ls
+
       - name: emsdk update
         run: git pull #./emsdk update
 
