@@ -24,7 +24,7 @@ jobs:
         run: sudo apt update
 
       - name: install base packages
-        run: sudo apt-get git gcc g++ cmake wget unzip
+        run: sudo apt-get install git gcc g++ cmake wget unzip
 
       - name: cd
         run: cd ~
