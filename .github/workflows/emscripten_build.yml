@@ -42,8 +42,16 @@ jobs:
         run: ls
         working-directory: ./emsdk
 
-      - name: emscripten install
+      - name: emscripten install 1.39.4-fastcomp
         run: ./emsdk install 1.39.4-fastcomp # https://github.com/constantdupuis/of_docker
+        working-directory: ./emsdk
+
+      - name: emscripten activate 1.39.4-fastcomp
+        run: ./emsdk activate 1.39.4-fastcomp # https://github.com/constantdupuis/of_docker
+        working-directory: ./emsdk
+
+      - name: emscripten set PATH 1.39.4-fastcomp once
+        run: source "/home/runner/work/emscripten_openframeworks/emscripten_openframeworks/emsdk/emsdk_env.sh" && emcc --clear-cache
         working-directory: ./emsdk
 
       - name: emscripten install binaryen
@@ -54,17 +62,20 @@ jobs:
         run: ./emsdk activate binaryen-tag-1.38.9-64bit
         working-directory: ./emsdk
 
-      - name: emscripten set PATH
+      - name: emscripten set PATH binaryen
         run: source "/home/runner/work/emscripten_openframeworks/emscripten_openframeworks/emsdk/emsdk_env.sh" && emcc --clear-cache
         working-directory: ./emsdk
 
-      - name: emscripten activate a version
+      - name: emscripten activate 1.39.4-fastcomp
         run: ./emsdk activate 1.39.4-fastcomp # https://github.com/constantdupuis/of_docker
         working-directory: ./emsdk
 
-      - name: emscripten set PATH
+      - name: emscripten set PATH 1.39.4-fastcomp once
         run: source "/home/runner/work/emscripten_openframeworks/emscripten_openframeworks/emsdk/emsdk_env.sh" && emcc --clear-cache
         working-directory: ./emsdk
+
+      - name: show env
+        run: env
 
       - name: emscripten first run
         run: ./emcc
