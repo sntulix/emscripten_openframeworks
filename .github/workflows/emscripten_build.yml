@@ -75,6 +75,9 @@ jobs:
       - name: cd
         run: cd ~
 
+      - name: check .emscripten
+        run: cat /home/runner/.emscripten
+
       - name: openFrameworks download
         run: wget --quiet https://github.com/openframeworks/openFrameworks/archive/0.11.0.zip
 
