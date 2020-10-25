@@ -1,0 +1,48 @@
+name: emscripten_build
+
+# Run this workflow every time a new commit pushed to your repository
+on: push
+
+jobs:
+  # Set the job key. The key is displayed as the job name
+  # when a job name is not provided
+  emscripten_build:
+    # Name the Job
+    name: emscripten build
+    # Set the type of machine to run on
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks out a copy of your repository on the ubuntu-latest machine
+      - name: show uname
+        run: uname -a
+
+      - name: symbolic link python2
+        run: sudo ln -s /usr/bin/python2 /usr/bin/python
+
+      - name: update apt
+        run: sudo apt update
+
+      - name: install base packages
+        run: sudo apt-get -y git gcc g++ cmake wget unzip
+
+      - name: cd
+        run: cd ~
+
+      - name: git clone 
+        run: git clone https://github.com/emscripten-core/emsdk.git
+
+      - name: cd
+        run: cd emsdk
+
+      - name: emsdk update
+        run: git pull #./emsdk update
+
+      - name: emscripten install
+        run: ./emsdk install 1.39.4-fastcomp # https://github.com/constantdupuis/of_docker
+
+      - name: emscripten activate a version
+        run: ./emsdk activate 1.39.4-fastcomp # https://github.com/constantdupuis/of_docker
+
+      - name: emscripten set PATH
+        run: source "/home/takahiro/source/emsdk/emsdk_env.sh" && emcc --clear-cache
