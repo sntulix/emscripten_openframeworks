@@ -39,7 +39,7 @@ jobs:
         run: ls
 
       - name: cd
-        run: cd emsdk
+        run: cd ./emsdk
 
       - name: ls
         run: ls
