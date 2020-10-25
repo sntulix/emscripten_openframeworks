@@ -54,6 +54,14 @@ jobs:
         run: source "/home/runner/work/emscripten_openframeworks/emscripten_openframeworks/emsdk/emsdk_env.sh" && emcc --clear-cache
         working-directory: ./emsdk
 
+      - name: emscripten install binaryen
+        run: ./emsdk install binaryen-tag-1.38.9-64bit
+        working-directory: ./emsdk
+
+      - name: emscripten set BINARYEN_ROOT binaryen dir
+        run: echo BINARYEN_ROOT=/home/runner/work/emscripten_openframeworks/emscripten_openframeworks/emsdk/binaryen/tag-1.38.9_64bit_binaryen >> ~/.emscripten
+        working-directory: ./emsdk
+
       - name: show env
         run: env
 
