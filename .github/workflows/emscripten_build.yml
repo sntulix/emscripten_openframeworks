@@ -26,6 +26,9 @@ jobs:
       - name: install base packages
         run: sudo apt-get install git gcc g++ cmake wget unzip
 
+      - name: wget alias
+        run: alias wget="wget --quiet"
+
       - name: cd
         run: cd ~
 
@@ -53,6 +56,7 @@ jobs:
 
       - name: emscripten first run
         run: emcc
+        working-directory: ./emsdk/fastcomp/emscripten
 
       - name: cd
         run: cd ~
