@@ -29,20 +29,20 @@ jobs:
       - name: cd
         run: cd ~
 
-      - name: git clone 
-        run: git clone https://github.com/emscripten-core/emsdk.git
+    - name: Checkout other repo
+      uses: actions/checkout@v2
+      with:
+        repository: emscripten-core/emsdk
+        path: emsdk
 
       - name: ls
         run: ls
 
       - name: cd
-        run: cd ~/emsdk
+        run: cd emsdk
 
       - name: ls
         run: ls
-
-      - name: emsdk update
-        run: git pull #./emsdk update
 
       - name: emscripten install
         run: ./emsdk install 1.39.4-fastcomp # https://github.com/constantdupuis/of_docker
