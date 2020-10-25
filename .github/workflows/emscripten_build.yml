@@ -73,7 +73,7 @@ jobs:
         working-directory: ./openFrameworks-0.11.0/examples/3d/3DPrimitivesExample
 
       - name: openFrameworks build sample
-        run: ./emsdk/emscripten/1.38.9/emmake make
+        run: ~/emsdk/emscripten/1.38.9/emmake make
         working-directory: ./openFrameworks-0.11.0/examples/3d/3DPrimitivesExample
 
       - name: ls
