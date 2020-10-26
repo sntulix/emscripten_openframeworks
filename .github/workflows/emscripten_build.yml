@@ -87,10 +87,6 @@ jobs:
       - name: check .emscripten
         run: cat ./emsdk/.emscripten
 
-      - name: emscripten first run
-        run: ./emcc
-        working-directory: ./emsdk/fastcomp/emscripten
-
       - name: cd
         run: cd ~
 
