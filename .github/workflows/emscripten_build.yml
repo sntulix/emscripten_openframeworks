@@ -11,6 +11,7 @@ jobs:
     name: emscripten build
     # Set the type of machine to run on
     runs-on: ubuntu-latest
+    continue-on-error: true
 
     steps:
       # Checks out a copy of your repository on the ubuntu-latest machine
@@ -84,13 +85,6 @@ jobs:
       - name: check .emscripten
         run: cat ./emsdk/.emscripten
 
-  openFrameworks_build:
-    # Name the Job
-    name: openFrameworks build
-    # Set the type of machine to run on
-    runs-on: ubuntu-latest
-
-    steps:
       - name: cd
         run: cd ~
 
