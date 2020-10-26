@@ -69,6 +69,10 @@ jobs:
         run: source "/home/runner/work/emscripten_openframeworks/emscripten_openframeworks/emsdk/emsdk_env.sh" && emcc --clear-cache
         working-directory: ./emsdk
 
+      - name: emscripten set NODE_JS  dir
+        run: echo NODE_JS = "'/home/runner/work/emscripten_openframeworks/emscripten_openframeworks/emsdk/node/12.18.1_64bit/bin/node'" >> ~/.emscripten
+        working-directory: ./emsdk
+
       - name: emscripten set LLVM_ROOT  dir
         run: echo LLVM_ROOT = "'/home/runner/work/emscripten_openframeworks/emscripten_openframeworks/emsdk/fastcomp/fastcomp/bin'" >> ~/.emscripten
         working-directory: ./emsdk
