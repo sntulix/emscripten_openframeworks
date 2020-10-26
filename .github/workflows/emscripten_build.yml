@@ -11,7 +11,6 @@ jobs:
     name: emscripten build
     # Set the type of machine to run on
     runs-on: ubuntu-latest
-    continue-on-error: true
 
     steps:
       # Checks out a copy of your repository on the ubuntu-latest machine
@@ -109,6 +108,7 @@ jobs:
       - name: openFrameworks build sample
         run: ../../../../emsdk/fastcomp/emscripten/emmake make
         working-directory: ./openFrameworks-0.11.0/examples/3d/3DPrimitivesExample
+        shell: bash {0}
 
       - name: ls
         run: ls
