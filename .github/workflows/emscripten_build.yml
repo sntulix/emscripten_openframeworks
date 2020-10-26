@@ -51,7 +51,11 @@ jobs:
 
       - name: ls
         run: ls
-        working-directory: ./emsdk/fastcomp/emscripten
+        working-directory: ./emsdk/
+
+      - name: ls
+        run: ls
+        working-directory: ./emsdk/fastcomp
 
       - name: ls
         run: ls
@@ -72,14 +76,6 @@ jobs:
       - name: emscripten set BINARYEN_ROOT binaryen dir
         run: echo BINARYEN_ROOT = "'/home/runner/work/emscripten_openframeworks/emscripten_openframeworks/emsdk/fastcomp'" >> ~/.emscripten
         working-directory: ./emsdk
-
-      - name: ls
-        run: ls
-        working-directory: ./emsdk/binaryen
-
-      - name: ls
-        run: ls
-        working-directory: ./emsdk/binaryen/tag-1.38.9_64bit_binaryen
 
       - name: show env
         run: env
