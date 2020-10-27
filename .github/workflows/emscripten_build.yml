@@ -117,3 +117,8 @@ jobs:
       - name: ls
         run: ls
         working-directory: ./openFrameworks-0.11.0/examples/3d/3DPrimitivesExample/bin
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: openFrameworks_3DPrimitivesExample_Webassembly
+          path: ./openFrameworks-0.11.0/examples/3d/3DPrimitivesExample/bin
