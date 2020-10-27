@@ -108,7 +108,7 @@ jobs:
       - name: openFrameworks build sample
         run: ../../../../emsdk/fastcomp/emscripten/emmake make
         working-directory: ./openFrameworks-0.11.0/examples/3d/3DPrimitivesExample
-        shell: bash {0}
+        continue-on-error: true
 
       - name: ls
         run: ls
