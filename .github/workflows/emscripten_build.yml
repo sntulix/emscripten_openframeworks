@@ -124,10 +124,10 @@ jobs:
 
 
       - name: Checkout this repo
-         uses: actions/checkout@v2
-         with:
-           repository: sntulix/emscripten_openframeworks_github_actions
-           path: ./emscripten_openframeworks_github_actions
+        uses: actions/checkout@v2
+        with:
+          repository: sntulix/emscripten_openframeworks_github_actions
+          path: ./emscripten_openframeworks_github_actions
 
       - name: copy 3DPrimitivesExample to THE_REPO_ROOT_DIR
         run: cp -r 3DPrimitivesExample ../../../emscripten_openframeworks_github_actions
