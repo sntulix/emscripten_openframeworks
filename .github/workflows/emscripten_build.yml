@@ -29,8 +29,7 @@ jobs:
       - name: wget alias
         run: alias wget="wget --quiet"
 
-      - name: cd
-        run: cd ~
+
 
       - name: Checkout other repo
         uses: actions/checkout@v2
@@ -84,8 +83,7 @@ jobs:
       - name: check .emscripten
         run: cat ./emsdk/.emscripten
 
-      - name: cd
-        run: cd ~
+
 
       - name: openFrameworks download
         run: wget --quiet https://github.com/openframeworks/openFrameworks/archive/0.11.0.zip
@@ -122,3 +120,19 @@ jobs:
         with:
           name: openFrameworks_3DPrimitivesExample_Webassembly
           path: ./openFrameworks-0.11.0/examples/3d/3DPrimitivesExample/bin
+
+
+
+      - name: Checkout this repo
+         uses: actions/checkout@v2
+         with:
+           repository: sntulix/emscripten_openframeworks_github_actions
+           path: ./emscripten_openframeworks_github_actions
+
+      - name: copy 3DPrimitivesExample to THE_REPO_ROOT_DIR
+        run: cp -r 3DPrimitivesExample ../../../emscripten_openframeworks_github_actions
+        working-directory: ./openFrameworks-0.11.0/examples/3d
+
+      - name: ls
+        run: ls
+        working-directory: ./emscripten_openframeworks_github_actions
