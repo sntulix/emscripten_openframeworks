@@ -136,3 +136,19 @@ jobs:
       - name: ls
         run: ls
         working-directory: ./emscripten_openframeworks_github_actions
+
+      - name: Commit files
+        run: |
+          git config --local user.email "shizu@futuregadget.com"
+          git config --local user.name "sntulix"
+          git add docs
+          git commit -m "Add docs" -a
+        working-directory: ./emscripten_openframeworks_github_actions
+        continue-on-error: true
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.ACCESS_TOKEN }}
+          directory: ./emscripten_openframeworks_github_actions
+
