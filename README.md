@@ -1,4 +1,4 @@
-# emscripten openframeworks sample built by github actions
+# emscripten openframeworks sample built on github actions
 
 ## on github page
 https://sntulix.github.io/emscripten_openframeworks_github_actions/3DPrimitivesExample/bin/3DPrimitivesExample.html
