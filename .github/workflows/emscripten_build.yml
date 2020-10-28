@@ -141,8 +141,8 @@ jobs:
         run: |
           git config --local user.email "shizu@futuregadget.com"
           git config --local user.name "sntulix"
-          git add docs
-          git commit -m "Add docs" -a
+          git add 3DPrimitivesExample
+          git commit -m "Add exmaples" -a
         working-directory: ./emscripten_openframeworks_github_actions
         continue-on-error: true
 
