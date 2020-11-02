@@ -1,4 +1,4 @@
-# emscripten openframeworks sample built on github actions
+# A example of [openFrameworks](https://openframeworks.cc/) on browser executed with webassembly built on github actions
 
 ## on github page
 https://sntulix.github.io/emscripten_openframeworks_github_actions/3DPrimitivesExample/bin/3DPrimitivesExample.html
